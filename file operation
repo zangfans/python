@@ -1,0 +1,71 @@
+#!usr/bin/env python
+#_*_ coding:utf-8 _*_
+'''
+open close 打开关闭文件
+file对象属性closed mode name
+读写文件  write  read
+
+'''
+# f = open('zangfan.txt','r+')
+# f.write("Python is a great language.\nYeah its great!!\n")
+# # str = f.read(10)
+# data = ''
+# for i in f.read():
+#     data.append(str(i))
+# print("Read String is:", data)
+#
+# f.close()
+#open a file
+# f = open("zangfan.txt", "r+")
+# str = f.read(10)
+# print("Read String is:", str)
+#
+# #Check current postion
+# position = f.tell()
+# print("Current fiel position :", position)
+#
+# #Repositin pinter at the begginning once again
+# position = f.seek(0,0)
+# str = f.read(10)
+# print("Again read String is:", str)
+# #Close opened file
+# f.close()
+
+
+
+# f = open('openfile.txt', 'r+')
+# f.write("This is strange world")
+# print('-->seek:', f.tell())
+# f.seek(0)
+# a = f.readline()   #读取文件一行内容
+# b = f.readlines()   #读取整行内容
+# print("--->", a)
+# print("--->", b)
+
+
+#seek方法对a a+模式写文件事实不管用的
+import  time
+f = open('openfile.txt', 'r')
+f.seek(2)
+while True:
+    currline = f.tell()
+    line = f.readline()
+    if not line:
+        f.seek(currline)
+    else:
+        print(line)
+    time.sleep(2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
